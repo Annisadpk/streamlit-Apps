@@ -25,4 +25,4 @@ scatter_plot = sns.scatterplot(data=data, x='experience_level', y='salary_in_usd
 scatter_plot.set_title('Korelasi antara Gaji dan Tingkat Pengalaman')
 scatter_plot.set_xlabel('Tingkat Pengalaman')
 scatter_plot.set_ylabel('Gaji (USD)')
-st.pyplot()
+st.pyplot(plt.gcf())
