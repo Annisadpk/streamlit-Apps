@@ -17,12 +17,7 @@ st.subheader("5 Posisi dengan Gaji Terbesar")
 top_5_positions = data.groupby('job_title')['salary_in_usd'].mean().nlargest(5)
 st.bar_chart(top_5_positions)
 
-# Distribution of job positions
-st.subheader("Distribusi Posisi Pekerjaan")
-fig, ax = plt.subplots()
-position_distribution.plot(kind='pie', autopct='%1.1f%%', startangle=90, ax=ax)
-ax.axis('equal')  
-st.pyplot(fig)
+
 
 # Scatter plot of salary against experience level
 st.subheader("Korelasi antara Gaji dan Tingkat Pengalaman")
