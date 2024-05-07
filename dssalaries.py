@@ -22,11 +22,6 @@ st.subheader("10 Posisi Pekerjaan Teratas")
 position_distribution = data['job_title'].value_counts().head(10)
 st.write(position_distribution)
 
-# Distribution of job positions
-st.subheader("Distribusi Posisi Pekerjaan")
-position_distribution.plot(kind='pie', autopct='%1.1f%%', startangle=90)
-plt.axis('equal')  
-st.pyplot(plt.gcf())
 
 # Scatter plot of salary against experience level
 st.subheader("Korelasi antara Gaji dan Tingkat Pengalaman")
