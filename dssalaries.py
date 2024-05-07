@@ -17,17 +17,17 @@ st.subheader("5 Posisi dengan Gaji Terbesar")
 top_5_positions = data.groupby('job_title')['salary_in_usd'].mean().nlargest(5)
 st.bar_chart(top_5_positions)
 
-
 # Distribution of job positions
 st.subheader("10 Posisi Pekerjaan Teratas")
 position_distribution = data['job_title'].value_counts().head(10)
 st.write(position_distribution)
 
-# Distribution of job positions
+# Distribution of job positions (as pie chart)
 st.subheader("Distribusi Posisi Pekerjaan")
-position_distribution.plot(kind='pie', autopct='%1.1f%%', startangle=90)
-plt.axis('equal')  
-st.pyplot(plt.gcf())
+fig, ax = plt.subplots()
+position_distribution.plot(kind='pie', autopct='%1.1f%%', startangle=90, ax=ax)
+ax.axis('equal')  
+st.pyplot(fig)
 
 # Scatter plot of salary against experience level
 st.subheader("Korelasi antara Gaji dan Tingkat Pengalaman")
@@ -35,4 +35,4 @@ scatter_plot = sns.scatterplot(data=data, x='experience_level', y='salary_in_usd
 scatter_plot.set_title('Korelasi antara Gaji dan Tingkat Pengalaman')
 scatter_plot.set_xlabel('Tingkat Pengalaman')
 scatter_plot.set_ylabel('Gaji (USD)')
-st.pyplot(plt.gcf())
+st.pyplot()
