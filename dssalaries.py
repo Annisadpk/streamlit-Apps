@@ -26,3 +26,16 @@ scatter_plot.set_title('Korelasi antara Gaji dan Tingkat Pengalaman')
 scatter_plot.set_xlabel('Tingkat Pengalaman')
 scatter_plot.set_ylabel('Gaji (USD)')
 st.pyplot(plt.gcf())
+
+
+# Distribution of job positions
+st.subheader("10 Posisi Pekerjaan Teratas")
+position_distribution = data['job_title'].value_counts().head(10)
+st.write(position_distribution)
+
+# Distribution of job positions (as pie chart)
+st.subheader("Distribusi Posisi Pekerjaan")
+fig, ax = plt.subplots()
+position_distribution.plot(kind='pie', autopct='%1.1f%%', startangle=90, ax=ax)
+ax.axis('equal')  
+st.pyplot(fig)
