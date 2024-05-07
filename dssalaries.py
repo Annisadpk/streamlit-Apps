@@ -18,6 +18,12 @@ top_5_positions = data.groupby('job_title')['salary_in_usd'].mean().nlargest(5)
 st.bar_chart(top_5_positions)
 
 # Distribution of job positions
+st.subheader("Distribusi Posisi Pekerjaan")
+position_distribution.plot(kind='pie', autopct='%1.1f%%', startangle=90)
+plt.axis('equal')  
+st.pyplot(plt.gcf())
+
+# Distribution of job positions
 st.subheader("10 Posisi Pekerjaan Teratas")
 position_distribution = data['job_title'].value_counts().head(10)
 st.write(position_distribution)
