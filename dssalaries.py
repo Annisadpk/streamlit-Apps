@@ -14,7 +14,7 @@ data = load_data()
 
 # Top 10 Film berdasarkan IMDb Rating
 # Sorting data by IMDb rating in descending order and selecting top 10
-top_10_movies = data.sort_values(by='IMDb Rating', ascending=False).head(10)
+top_10_movies = data.sort_values(by='salary_in_usd', ascending=False).head(10)
 
 # Setting up Streamlit app
 st.header('Top 10 Film dengan IMDb Rating Tertinggi')
@@ -23,7 +23,7 @@ st.header('Top 10 Film dengan IMDb Rating Tertinggi')
 custom_colors = ['#FF5733', '#C70039', '#900C3F', '#581845', '#2C7873', '#1287A5', '#5DADE2', '#85C1E9', '#D7BDE2', '#F4D03F']
 
 # Displaying bar chart using Streamlit with custom colors
-st.bar_chart(top_10_movies.set_index('Title')['IMDb Rating'], color=custom_colors)
+st.bar_chart(top_10_movies.set_index('job_title')['salary_in_usd'], color=custom_colors)
 st.write("Grafik ini menampilkan 10 film dengan rating IMDb tertinggi dalam data. Film-film ini memiliki rating yang sangat tinggi, menunjukkan bahwa mereka sangat dihargai oleh penonton dan kritikus.")
 
 # Top 5 positions with highest salaries
