@@ -20,7 +20,7 @@ plt.barh(top_10_movies['job_title'], top_10_movies['salary_in_usd'], color='choc
 plt.xlabel('IMDb Rating')
 plt.title('Top 10 Film dengan IMDb Rating Tertinggi')
 plt.gca().invert_yaxis()
-st.pyplot(plt)
+st.bar_chart('Top 10 Film dengan IMDb Rating Tertinggi')
 st.write("Grafik ini menampilkan 10 film dengan rating IMDb tertinggi dalam data. Film-film ini memiliki rating yang sangat tinggi, menunjukkan bahwa mereka sangat dihargai oleh penonton dan kritikus.")
 
 # Top 5 positions with highest salaries
