@@ -12,6 +12,17 @@ def load_data():
 # Load data
 data = load_data()
 
+# Top 10 Film berdasarkan IMDb Rating
+st.header('Top 10 Film dengan IMDb Rating Tertinggi')
+top_10_movies = data.sort_values(by='salary_in_usd', ascending=False).head(10)
+plt.figure(figsize=(12, 8))
+plt.barh(top_10_movies['job_title'], top_10_movies['IMDb Rating'], color='chocolate')
+plt.xlabel('IMDb Rating')
+plt.title('Top 10 Film dengan IMDb Rating Tertinggi')
+plt.gca().invert_yaxis()
+st.pyplot(plt)
+st.write("Grafik ini menampilkan 10 film dengan rating IMDb tertinggi dalam data. Film-film ini memiliki rating yang sangat tinggi, menunjukkan bahwa mereka sangat dihargai oleh penonton dan kritikus.")
+
 # Top 5 positions with highest salaries
 st.subheader("5 Posisi dengan Gaji Terbesar")
 top_5_positions = data.groupby('job_title')['salary_in_usd'].mean().nlargest(5)
