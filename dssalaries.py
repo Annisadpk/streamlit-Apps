@@ -14,8 +14,7 @@ data = load_data()
 
 # Top 10 Film berdasarkan IMDb Rating
 st.header('Top 10 Film dengan IMDb Rating Tertinggi')
-top_10_movies = data.sort_values(by='IMDb Rating', ascending=False).head(10)
-plt.figure(figsize=(12, 8))
+top_10_movies = data.sort_values(by='IMDb Rating', ascending=False).head(10))
 plt.barh(top_10_movies['Title'], top_10_movies['IMDb Rating'], color='chocolate')
 st.bar_chart("Top 10 Film dengan IMDb Rating Tertinggi")
 st.write("Grafik ini menampilkan 10 film dengan rating IMDb tertinggi dalam data. Film-film ini memiliki rating yang sangat tinggi, menunjukkan bahwa mereka sangat dihargai oleh penonton dan kritikus.")
