@@ -20,7 +20,7 @@ top_10_movies = data.sort_values(by='salary_in_usd', ascending=False).head(10)
 st.header('Top 10 Film dengan IMDb Rating Tertinggi')
 
 # Defining custom colors for the bar chart
-custom_colors = ['#FF5733']
+custom_colors = ['chocolate']
 
 # Displaying bar chart using Streamlit with custom colors
 st.bar_chart(top_10_movies.set_index('job_title')['salary_in_usd'], color=custom_colors)
